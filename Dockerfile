@@ -42,7 +42,7 @@ RUN \
 
 
 
-FROM alpine:3.7
+FROM alpine:3.8
 
 ENV \
   ELM_VERSION=0.18 \
