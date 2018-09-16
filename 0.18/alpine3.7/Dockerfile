@@ -10,7 +10,7 @@ ENV \
 RUN \
   mkdir Elm-Platform && \
   apk update && \
-  apk add git musl-dev ncurses-dev zlib-dev
+  apk add --no-cache git musl-dev ncurses-dev zlib-dev
 
 WORKDIR /Elm-Platform/${ELM_VERSION}
 
@@ -42,7 +42,7 @@ RUN \
 
 
 
-FROM alpine:3.8
+FROM alpine:3.7
 
 ENV \
   ELM_VERSION=0.18 \
@@ -54,7 +54,7 @@ COPY --from=build /Elm-Platform/${ELM_VERSION}/.cabal-sandbox/bin /elm/${ELM_VER
 
 RUN \
   apk update && \
-  apk add gmp ncurses-libs nodejs
+  apk add --no-cache gmp ncurses-libs nodejs
 
 EXPOSE ${REACTOR_PORT}
 
