@@ -11,10 +11,10 @@ Since the image is based on Alpine distributive, it's suitable for use at produc
 
 You can choose one of the variants below:
 
-- Elm 0.19 on Alpine 3.8: `latest`, `0.19`, `0.19-alpine3.8`;
-- Elm 0.19 on Alpine 3.7: `0.19-alpine3.7`;
-- Elm 0.18 on Alpine 3.8: `0.18`, `0.18-alpine3.8`;
-- Elm 0.18 on Alpine 3.7: `0.18-alpine3.7`.
+- **Elm 0.19 on Alpine 3.8:** `latest`, `0.19`, `0.19-alpine3.8`;
+- **Elm 0.19 on Alpine 3.7:** `0.19-alpine3.7`;
+- **Elm 0.18 on Alpine 3.8:** `0.18`, `0.18-alpine3.8`;
+- **Elm 0.18 on Alpine 3.7:** `0.18-alpine3.7`.
 
 See [official repository](https://hub.docker.com/r/wunsh/alpine-elm/) at Docker Hub.
 
@@ -33,19 +33,19 @@ $ docker run wunsh/alpine-elm:latest
 Now, try to play with Elm in the interactive REPL:
 
 ```bash
-docker run -it wunsh/alpine-elm:latest repl
+$ docker run -it wunsh/alpine-elm:latest repl
 ```
 
 The more complicated way to play with Elm is using Reactor. This is on-the-fly development server, launched on `8000` port:
 
 ```bash
-docker run $(pwd):/var/opt/ -p 8000:8000 -it wunsh/alpine-elm:latest reactor
+$ docker run $(pwd):/var/opt/ -p 8000:8000 -it wunsh/alpine-elm:latest reactor
 ```
 
 You can start new project in the current directory like this:
 
 ```bash
-docker run $(pwd):/var/opt/ -it wunsh/alpine-elm:latest init
+$ docker run $(pwd):/var/opt/ -it wunsh/alpine-elm:latest init
 ```
 
 Another commands supported by Elm 0.19:
