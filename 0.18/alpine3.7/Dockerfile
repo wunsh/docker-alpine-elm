@@ -62,4 +62,4 @@ WORKDIR /opt/app
 
 ENTRYPOINT ["elm"]
 
-CMD ["--help"]
+CMD ["-v"]
