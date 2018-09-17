@@ -20,7 +20,7 @@ See [official repository](https://hub.docker.com/r/wunsh/alpine-elm/) at Docker 
 
 ## Usage
 
-There are `8000` port is exposed in Dockerfile and `/var/opt` directory is prepared for mounting.
+There are `8000` port is exposed in Dockerfile and `/opt/app` directory is prepared for mounting.
 
 ### Elm 0.19
 
@@ -39,13 +39,13 @@ $ docker run -it wunsh/alpine-elm:latest repl
 The more complicated way to play with Elm is using Reactor. This is on-the-fly development server, launched on `8000` port:
 
 ```bash
-$ docker run $(pwd):/var/opt/ -p 8000:8000 -it wunsh/alpine-elm:latest reactor
+$ docker run -v $(pwd):/opt/app -p 8000:8000 -it wunsh/alpine-elm:latest reactor
 ```
 
 You can start new project in the current directory like this:
 
 ```bash
-$ docker run $(pwd):/var/opt/ -it wunsh/alpine-elm:latest init
+$ docker run -v $(pwd):/opt/app -it wunsh/alpine-elm:latest init
 ```
 
 Another commands supported by Elm 0.19:
