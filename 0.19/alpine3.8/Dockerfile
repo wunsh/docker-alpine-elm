@@ -49,4 +49,8 @@ RUN \
 
 EXPOSE ${REACTOR_PORT}
 
-CMD ["sh"]
+WORKDIR /opt/app
+
+ENTRYPOINT ["elm"]
+
+CMD ["--help"]
