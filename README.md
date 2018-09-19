@@ -27,25 +27,25 @@ There are `8000` port is exposed in Dockerfile and `/opt/app` directory is prepa
 Check it out:
 
 ```bash
-$ docker run wunsh/alpine-elm:latest
+$ docker run --rm wunsh/alpine-elm:latest
 ```
 
 Now, try to play with Elm in the interactive REPL:
 
 ```bash
-$ docker run -it wunsh/alpine-elm:latest repl
+$ docker run --rm -it wunsh/alpine-elm:latest repl
 ```
 
 The more complicated way to play with Elm is using Reactor. This is on-the-fly development server, launched on `8000` port:
 
 ```bash
-$ docker run -v $(pwd):/opt/app -p 8000:8000 -it wunsh/alpine-elm:latest reactor
+$ docker run --rm -it -v $(pwd):/opt/app -p 8000:8000 wunsh/alpine-elm:latest reactor
 ```
 
 You can start new project in the current directory like this:
 
 ```bash
-$ docker run -v $(pwd):/opt/app -it wunsh/alpine-elm:latest init
+$ docker run --rm -v $(pwd):/opt/app -it wunsh/alpine-elm:latest init
 ```
 
 Another commands supported by Elm 0.19:
